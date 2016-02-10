@@ -13,5 +13,12 @@ class Posts extends Model
     {
         return $this->belongsTo('App\User');
     }
+    /**
+     * Get the users for the posts.
+     */
+    public function postUser()
+    {
+        return $this->belongsToMany('App\User');
+    }
 
 }
