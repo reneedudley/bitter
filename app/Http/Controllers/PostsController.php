@@ -60,7 +60,6 @@ class PostsController extends Controller
         $post->user_id = $request->user_id;
         $post->content = $request->content;
         $post->save();
-
         return $post;
     }
 
@@ -72,7 +71,8 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        $post = \App\Post::destroy($id);
-
+        $post = \App\Post::find($id);
+        $post->delete();
+        return $post;
     }
 }
