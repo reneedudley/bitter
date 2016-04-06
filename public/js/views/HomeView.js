@@ -1,8 +1,8 @@
 "use strict";
 
-var Backbone = require('Backbone');
-var PostsListView = require('./views/PostsListView.js');
-var PostsCollection = require('./collections/PostsCollection.js');
+var Backbone = require('backbone');
+var PostsListView = require('./PostsListView.js');
+var PostsCollection = require('../collections/PostsCollection.js');
 
 var HomeView =Backbone.View.extend({
 	el: '\
@@ -18,7 +18,7 @@ var HomeView =Backbone.View.extend({
 			collection:posts
 		});
 		postsListView.render();
-		$('#allposts').html(subbredditsListView.el);
+		$('#allposts').html(postsListView.el);
 		return this;
 	}
 });

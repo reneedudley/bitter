@@ -1,6 +1,8 @@
 'use strict';
 
+
 var Backbone = require('backbone');
+
 
 var PostModel = Backbone.Model.extend({
 	urlRoot: '/posts',
@@ -8,4 +10,4 @@ var PostModel = Backbone.Model.extend({
 
 });
 
-module.exports =PostModel;
+module.exports = PostModel;

@@ -1,6 +1,9 @@
 'use strict';
 
-// page loaded 
+var browserify= require('browserify');
+var HomeView = require('./views/HomeView.js'); 
+
+var Backbone = require('backbone');
 
 $(function(){
 	$.ajaxSetup({
@@ -8,11 +11,9 @@ $(function(){
 		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 		}
 	});
-
-	var Backbone = require('backbone');
-	var HomeView = require('./views/HomeView.js');
+ 
 
 	var homeView= new HomeView();
-	
+
 	$('#content').html(homeView.render().el);
 });

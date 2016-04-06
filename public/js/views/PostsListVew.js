@@ -1,5 +1,6 @@
 "use strict";
-var Backbone = require('Backbone');
+
+var Backbone = require('backbone');
 var _= require('Underscore');
 
 var PostsListView = Backbone.View.extend({
@@ -15,3 +16,5 @@ var PostsListView = Backbone.View.extend({
 	}
 
 });
+
+module.exports= PostsListView;
