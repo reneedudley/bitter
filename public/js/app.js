@@ -1,10 +1,10 @@
 'use strict';
 
-var $ = require('jquery');
+var $ = window.$ = window.jQuery = require('jquery');
 var Backbone = require('backbone');
 var HomeView = require('./views/HomeView.js');
 
-$(function($){
+$(function(){
 	$.ajaxSetup({
 	headers: {
 		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
