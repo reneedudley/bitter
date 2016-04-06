@@ -4,7 +4,7 @@ var Backbone = require('backbone');
 var PostsListView = require('./PostsListView.js');
 var PostsCollection = require('../collections/PostsCollection.js');
 
-var HomeView =Backbone.View.extend({
+var HomeView = Backbone.View.extend({
 	el: '\
 	<div class="container">\
 		<div> class="row">\

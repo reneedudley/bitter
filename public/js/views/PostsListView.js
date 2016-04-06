@@ -1,7 +1,7 @@
 "use strict";
 
+var _ = require('Underscore');
 var Backbone = require('backbone');
-var _= require('Underscore');
 
 var PostsListView = Backbone.View.extend({
 	el: '<ul></ul>',
@@ -10,6 +10,7 @@ var PostsListView = Backbone.View.extend({
 			<li><a href="#"><%=post.get("content") %></a></li>\
 			<% }) %>\
 	'),
+
 	render: function(){
 		this.template({posts:this.collection});
 		return this;
@@ -17,4 +18,4 @@ var PostsListView = Backbone.View.extend({
 
 });
 
-module.exports= PostsListView;
+module.exports = PostsListView;
