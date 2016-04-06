@@ -16,7 +16,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return \App\Post::all();
+        return \App\Posts::all();
     }
 
     /**
@@ -27,8 +27,8 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        $post = new \App\Post;
-        $post->user_id = $request->user_id;
+        $post = new \App\Posts;
+        $post->user_id = \Auth::user()->id;
         $post->content = $request->content;
         $post->save();
 
@@ -43,7 +43,7 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        return \App\Post::with('users')->find($id);
+        return \App\Posts::with('users')->find($id);
     }
 
     /**
@@ -55,9 +55,9 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $post = \App\Post::find($id);
-        $post = new \App\Post;
-        $post->user_id = $request->user_id;
+        $post = \App\Posts::find($id);
+        $post = new \App\Posts;
+        $post->user_id = \Auth::user()->id;
         $post->content = $request->content;
         $post->save();
         return $post;
@@ -71,7 +71,7 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        $post = \App\Post::find($id);
+        $post = \App\Posts::find($id);
         $post->delete();
         return $post;
     }
